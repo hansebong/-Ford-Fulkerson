@@ -27,7 +27,8 @@ u에서 v로 유량이 흘러올 경우, v의 입장에서는 u로 음수의 유
 ![image](https://user-images.githubusercontent.com/101376839/165795441-fd2c5668-924c-4ca6-8d8f-6dce05638e58.png)  
 flow를 흘려보낸뒤, 또 다른 경로로 flow를 흘려보낸다. 그러나 증가경로가 더 이상 존재하지 않는 것을 알 수 있다.  
 이때 네트워크 유량의 속성인 유량의 대칭성을 이용하여서 반대로 flow를 흘려보낼 수 있다. 예를 들어 방금전에 1->2로 1만큼의 flow를 흘려보냈으면 2->1로 -1만큼의 flow를 흘려보내는 것도 가능하다는 이야기다.  
-그런식으로 하면 아래와 같은 간선이 추가가 된다.
+그런식으로 하면 아래와 같은 간선이 추가가 된다.  
+
 ![image](https://user-images.githubusercontent.com/101376839/165796217-64c53e2a-57fc-42c9-9a40-e4d1ef601994.png)  
 이렇게 flow를 흘려보낸만큼 아래처럼 역 간선으로 flow를 흘러보낼 수 있다.
 ![image](https://user-images.githubusercontent.com/101376839/165796396-088694da-1b74-44f4-8c6b-1f358797e9ad.png)  
