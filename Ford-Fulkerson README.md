@@ -165,8 +165,10 @@ flow를 흘려보낸뒤, 또 다른 경로로 flow를 흘려보낸다. 그러나
  
       printf("최대 유량 : %d\n", result);
       }
-  
+   
  
+<img width="476" alt="image" src="https://user-images.githubusercontent.com/101376839/165807870-9c53cdc4-06c1-483f-bc7a-bee3ba8917a8.png">
+실행 결과는 이와 같다.
 
 
 
