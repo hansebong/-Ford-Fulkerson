@@ -1,24 +1,24 @@
-  '''
-  #include <iostream>
-  #include <vector>
-  #include <queue>
 
-  #define MAX 100
-  #define INF 1000000000
+      #include <iostream>
+      #include <vector>
+      #include <queue>
 
-  using namespace std;
+      #define MAX 100
+      #define INF 1000000000
 
-  int n = 6; //정점의 수
-  int C[MAX][MAX]; //용량의 배열
-  int F[MAX][MAX]; //현재 유량의 배열
-  int visited[MAX]; //현재의 정점 방문 여부
-  int result; //최대 유량의 결과
+      using namespace std;
 
-  vector<int> adj[MAX]; // 정점이 어느 정점으로부터 방문됬는지 기록하는 배열
+      int n = 6; //정점의 수
+      int C[MAX][MAX]; //용량의 배열
+      int F[MAX][MAX]; //현재 유량의 배열
+      int visited[MAX]; //현재의 정점 방문 여부
+      int result; //최대 유량의 결과
 
-  void maxFlow(int source, int sink)//최대 유량 계산하는 함수 {
+      vector<int> adj[MAX]; // 정점이 어느 정점으로부터 방문됬는지 기록하는 배열
 
-  while (1) {
+      void maxFlow(int source, int sink)//최대 유량 계산하는 함수 {
+
+      while (1) {
 
       fill(visited, visited + MAX, -1); // 현재 정점 방문 배열을 -1로 바꿈
 
@@ -65,53 +65,54 @@
 
       // 최대 유랑 추가
       result += f;
-  }
-  }
+      }
+      }
 
-  int main() {
+      int main() {
 
-  adj[1].push_back(2); 
-  adj[2].push_back(1);  
-  C[1][2] = 14; 
+      adj[1].push_back(2); 
+      adj[2].push_back(1);  
+      C[1][2] = 14; 
 
-  adj[1].push_back(4);
-  adj[4].push_back(1);
-  C[1][4] = 12;
+      adj[1].push_back(4);
+      adj[4].push_back(1);
+      C[1][4] = 12;
 
-  adj[2].push_back(3);
-  adj[3].push_back(2);
-  C[2][3] = 5;
+      adj[2].push_back(3);
+      adj[3].push_back(2);
+      C[2][3] = 5;
 
-  adj[2].push_back(4);
-  adj[4].push_back(2);
-  C[2][4] = 4;
+      adj[2].push_back(4);
+      adj[4].push_back(2);
+      C[2][4] = 4;
 
-  adj[2].push_back(5);
-  adj[5].push_back(2);
-  C[2][5] = 6;
+      adj[2].push_back(5);
+      adj[5].push_back(2);
+      C[2][5] = 6;
 
-  adj[2].push_back(6);
-  adj[6].push_back(2);
-  C[2][6] = 10;
+      adj[2].push_back(6);
+      adj[6].push_back(2);
+      C[2][6] = 10;
 
-  adj[3].push_back(6);
-  adj[6].push_back(3);
-  C[3][6] = 8;
+      adj[3].push_back(6);
+      adj[6].push_back(3);
+      C[3][6] = 8;
 
-  adj[4].push_back(5);
-  adj[5].push_back(4);
-  C[4][5] = 11;
+      adj[4].push_back(5);
+      adj[5].push_back(4);
+      C[4][5] = 11;
 
-  adj[5].push_back(3);
-  adj[3].push_back(5);
-  C[5][3] = 4;
+      adj[5].push_back(3);
+      adj[3].push_back(5);
+      C[5][3] = 4;
 
-  adj[5].push_back(6);
-  adj[6].push_back(5);
-  C[5][6] = 7;
+      adj[5].push_back(6);
+      adj[6].push_back(5);
+      C[5][6] = 7;
+    
+      maxFlow(1, 6);
 
-  maxFlow(1, 6);
+      printf("최대 유량 : %d\n", result);
+      }
+  
 
-  printf("최대 유량 : %d\n", result);
-  }
-  '''
