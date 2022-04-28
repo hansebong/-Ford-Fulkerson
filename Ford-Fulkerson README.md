@@ -59,31 +59,31 @@ flow를 흘려보낸뒤, 또 다른 경로로 flow를 흘려보낸다. 그러나
  
       using namespace std;
  
-      int n = 6; 
-      int C[MAX][MAX]; 
-      int F[MAX][MAX]; 
-      int visited[MAX]; 
-      int result; 
+      int n = 6; //정점의 수
+      int C[MAX][MAX]; //용량의 배열
+      int F[MAX][MAX]; //현재 유량의 배열
+      int visited[MAX]; //현재의 정점 방문 여부
+      int result; //최대 유량의 결과
  
-      vector<int> adj[MAX];
+      vector<int> adj[MAX]; // 정점이 어느 정점으로부터 방문됬는지 기록하는 배열
  
-      void maxFlow(int source, int sink) {
+      void maxFlow(int source, int sink)//최대 유량 계산하는 함수 {
  
       while (1) {
  
-          fill(visited, visited + MAX, -1);
+          fill(visited, visited + MAX, -1); // 현재 정점 방문 배열을 -1로 바꿈
  
           queue<int> q;
           q.push(source);
  
-          while (!q.empty()) {
+          while (!q.empty())// source에서 sink로 최단으로 도달하는 경로 찾기 {
  
               int start = q.front();
-              q.pop();
+              q.pop(); // queue의 front에 위치한 정점 추출
  
-              for (int i = 0; i < adj[start].size(); i++) {
+              for (int i = 0; i < adj[start].size(); i++) // queue 의 front 에 위치한 정점과 인접한 정점 탐색 {
  
-                  int end = adj[start][i]; 
+                  int end = adj[start][i]; // 인접 정점
  
                   if (C[start][end] - F[start][end] > 0 && visited[end] == -1) { 
                       // 인접 정점으로부터 연결된 경로들을 확인하기 위해, 인접 정점을 queue 에 삽입
